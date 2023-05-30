@@ -5,19 +5,31 @@ body {
     height: 100vh;
 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 
     background-color: #202020;
+
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1rem;
+    color: white;
+}
+
+.heading {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: bolder;
 }
 
 .container {
     display: grid;
 
-    grid-template-rows: 15% 1fr;
+    grid-template-rows: 4rem max-content;
 
     gap: 2rem;
-    width: 50%;
+    width: min(50%, 500px);
     aspect-ratio: 16/9;
 }
 
@@ -25,5 +37,17 @@ body {
     background-color: #303030;
 
     padding: 1rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
+}
+
+.icon-input > svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    aspect-ratio: 1/1;
+}
+
+.required {
+    color: #EF5552;
 }

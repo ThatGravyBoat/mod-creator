@@ -1,6 +1,6 @@
 
 function createFabricJson(data) {
-    return {
+    return JSON.stringify({
         schemaVersion: 1,
 
         id: data.id,
@@ -13,12 +13,10 @@ function createFabricJson(data) {
 
         authors: getFabricAuthors(data.authors) || undefined,
 
-        contributors: getFabricAuthors(data.contributors) || undefined,
-
         license: data.license,
 
         icon: data.display.icon || undefined,
-    }
+    });
 }
 
 function getFabricAuthors(authors) {

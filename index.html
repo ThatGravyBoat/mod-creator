@@ -2,20 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Mod my Pack</title>
+    <title>Pack to Mod Creator</title>
     <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/file-input.css">
+    <link rel="stylesheet" href="./styles/input-field.css">
 </head>
 <body>
-    <div class="container">
-        <div>
-            <input type="file" id="file" name="file" accept="application/zip" />
-        </div>
-        <div>
-
+    <h1 class="heading">Pack to Mod Creator</h1>
+    <div id="container" class="container">
+        <div class="file-input-line">
+            <label class="file-input icon-input" for="file">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-upload">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" x2="12" y1="3" y2="15"></line>
+                </svg>
+                <p>Upload a file</p>
+                <input type="file" id="file" name="file" accept="application/zip" />
+            </label>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 16v-4"></path><path d="M12 8h.01"></path>
+            </svg>
+            <p>Click to convert pack to mod.</p>
         </div>
     </div>
 </body>
 <script src="./scripts/fabric.js"></script>
+<script src="./scripts/quilt.js"></script>
+<script src="./scripts/forge.js"></script>
 <script src="./scripts/jszip.min.js"></script>
-<script src="scripts/infer.js"></script>
+<script src="./scripts/infer.js"></script>
+<script src="./scripts/generator.js"></script>
 </html>

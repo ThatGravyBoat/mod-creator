@@ -46,7 +46,9 @@ const infer = async (file) => {
             name: name,
             description: packMetaJson?.pack?.description || "",
             icon: packIcon ? "pack.png" : undefined,
-        }
+        },
+
+        zipFile: zip,
     }
 }
 
