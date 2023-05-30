@@ -4,6 +4,7 @@ function createQuiltJson(data) {
         schema_version: 1,
         quilt_loader: {
             id: data.id,
+            group: `packed.${data.id}.mod`,
             version: data.version,
 
             metadata: {
