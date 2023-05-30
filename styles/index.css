@@ -1,0 +1,29 @@
+body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #202020;
+}
+
+.container {
+    display: grid;
+
+    grid-template-rows: 15% 1fr;
+
+    gap: 2rem;
+    width: 50%;
+    aspect-ratio: 16/9;
+}
+
+.container > div {
+    background-color: #303030;
+
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
