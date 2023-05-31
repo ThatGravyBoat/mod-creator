@@ -29,7 +29,7 @@ const containsFolder = (zip, folder) => {
 /**
  * @param file {File}
  */
-const infer = async (file) => {
+export const infer = async (file) => {
     const zip = await reader.loadAsync(file);
     const name = file.name.substring(0, file.name.lastIndexOf("."));
     const packMeta = await zip.file("pack.mcmeta")?.async("text");
@@ -39,14 +39,20 @@ const infer = async (file) => {
     if (containsFolder(zip, "data/")) env.push("SERVER");
     if (containsFolder(zip, "assets/")) env.push("CLIENT");
 
+    const packDescription = packMetaJson?.pack?.description || "";
+
     return {
         id: toModId(name),
+        version: "",
+        license: "All Rights Reserved",
+
         env: env,
         display: {
             name: name,
-            description: packMetaJson?.pack?.description || "",
+            description: typeof packDescription === "string" ? packDescription : "",
             icon: packIcon ? "pack.png" : undefined,
         },
+        authors: [],
 
         zipFile: zip,
     }

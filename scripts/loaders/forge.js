@@ -1,0 +1,25 @@
+import {Loader} from "../loaders.js";
+
+export class ForgeLoader extends Loader {
+
+    constructor() {
+        super("META-INF/mods.toml");
+    }
+
+
+    createMetadata(data) {
+        return `
+            modloader="lowcodefml"
+            loaderVersion="[1,)"
+            license="${data.license}"
+            
+            [[mods]]
+            modId="${data.id}"
+            version="${data.version}"
+            displayName="${data.display.name}"
+            description="${data.display.description}"
+            ${data.display.icon ? `logoFile="${data.display.icon}"` : ""}
+            authors="${data.authors.map(author => author.name).join(",")}"
+        `;
+    }
+}

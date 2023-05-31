@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="./styles/input-field.css">
 </head>
 <body>
-    <h1 class="heading">Pack to Mod Creator</h1>
+<a id="blob-opener" style="display: none"></a>
+<h1 class="heading">Pack to Mod Creator</h1>
     <div id="container" class="container">
         <div class="file-input-line">
             <label class="file-input icon-input" for="file">
@@ -26,12 +27,38 @@
             </svg>
             <p>Click to convert pack to mod.</p>
         </div>
+        <div id="form" style="display: none" class="input-form">
+            <label class="input-field">
+                <span>Mod Id<span class="required">*</span></span>
+                <input id="mod-id">
+            </label>
+            <label class="input-field">
+                <span>Version<span class="required">*</span></span>
+                <input id="version">
+            </label>
+            <label class="input-field">
+                <span>License<span class="required">*</span></span>
+                <input id="license">
+            </label>
+            <label class="input-field">
+                <span>Name</span>
+                <input id="name">
+            </label>
+            <label class="input-field">
+                <span>Description</span>
+                <input id="description">
+            </label>
+            <label class="input-field">
+                <span>Authors (comma seperated)</span>
+                <input id="authors">
+            </label>
+            <div class="input-buttons">
+                <div class="input-button" id="submit">Finish</div>
+                This will download a jar file of the pack.
+            </div>
+        </div>
     </div>
 </body>
-<script src="./scripts/fabric.js"></script>
-<script src="./scripts/quilt.js"></script>
-<script src="./scripts/forge.js"></script>
-<script src="./scripts/jszip.min.js"></script>
-<script src="./scripts/infer.js"></script>
-<script src="./scripts/generator.js"></script>
+<script type="module" src="scripts/libs/jszip.min.js"></script>
+<script type="module" src="scripts/index.js"></script>
 </html>
