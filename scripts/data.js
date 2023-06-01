@@ -16,7 +16,9 @@ export class Data {
         Data.init("authors", data.authors.map(author => author.name).join(", "), "", authors => data.authors = authors.split(",").map(author => ({name: author.trim()})));
 
         const submit = document.getElementById("submit");
-        submit.addEventListener("click", () => {
+        const newSubmit = submit.cloneNode(true);
+        submit.parentNode.replaceChild(newSubmit, submit);
+        newSubmit.addEventListener("click", () => {
             const zip = data.zipFile;
             Loaders.save(zip, data)
             zip.generateAsync({type: "blob"}).then(content => {
