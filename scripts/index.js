@@ -15,3 +15,14 @@ document.getElementById("file").addEventListener("change", event => {
         infer(file).then(Data.set);
     }
 });
+
+document.body.addEventListener("dragenter", event => event.preventDefault());
+document.body.addEventListener("dragover", event => event.preventDefault());
+
+document.body.addEventListener("drop", event => {
+    event.preventDefault();
+    const file = event.dataTransfer.files[0];
+    if (file) {
+        infer(file).then(Data.set);
+    }
+})

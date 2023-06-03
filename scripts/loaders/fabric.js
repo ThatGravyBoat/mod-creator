@@ -29,13 +29,8 @@ export class FabricLoader extends Loader {
     static getFabricEnvironment(env) {
         const client = env.includes("CLIENT");
         const server = env.includes("SERVER");
-        if (client !== server) {
-            if (client) {
-                return "client";
-            }
-            if (server) {
-                return "server";
-            }
+        if (client && !server) {
+            return "client";
         }
         return "*";
     }

@@ -8,8 +8,8 @@ export class ForgeLoader extends Loader {
 
 
     createMetadata(data) {
-        return `
-            modloader="lowcodefml"
+        const metadata = `
+            modLoader="lowcodefml"
             loaderVersion="[1,)"
             license="${data.license}"
             
@@ -21,5 +21,9 @@ export class ForgeLoader extends Loader {
             ${data.display.icon ? `logoFile="${data.display.icon}"` : ""}
             authors="${data.authors.map(author => author.name).join(",")}"
         `;
+        return metadata.split("\n")
+            .filter(line => line.trim().length > 0)
+            .map(line => line.trim())
+            .join("\n");
     }
 }
