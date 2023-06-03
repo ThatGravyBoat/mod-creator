@@ -3,7 +3,7 @@ import {Loader} from "../loaders.js";
 export class FabricLoader extends Loader {
 
     constructor() {
-        super("fabric.mods.json");
+        super("fabric.mod.json");
     }
 
     createMetadata(data) {
